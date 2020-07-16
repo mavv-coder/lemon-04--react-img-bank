@@ -2,7 +2,7 @@ import React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { switchRoutes } from "./routes";
 import { LoginPage } from "../pods/login";
-import { ImgList } from "../pods/img-list";
+import { ImgList } from "../pods/picture-list";
 
 export const RouterComponent: React.FC = () => {
   return (
