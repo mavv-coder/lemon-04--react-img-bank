@@ -1,6 +1,6 @@
-import { PictureInfo } from "./mock-data.vm";
+import { PictureInfo } from "./mock-data.model";
 
-export const imgList: PictureInfo[] = [
+export const pictureList: PictureInfo[] = [
   {
     id: "01",
     picUrl: "./src/api/assets/01.jpg",
@@ -39,5 +39,5 @@ export const imgList: PictureInfo[] = [
 ];
 
 export const getImgListPromise = (): Promise<PictureInfo[]> => {
-  return Promise.resolve(imgList);
+  return Promise.resolve(pictureList);
 };
