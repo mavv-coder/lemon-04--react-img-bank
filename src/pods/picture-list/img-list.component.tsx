@@ -25,14 +25,16 @@ export const ImgList: React.FC = () => {
     onLoadImgList();
   }, []);
 
-  const handleChecked = (id) => {
-    if (checkedIdList.length > 0) {
-      checkedIdList.forEach((el, i) =>
-        el === id ? checkedIdList.splice(i, 1) : checkedIdList.push(id)
-      );
+  const handleChecked = (id: string): void => {
+    const newList = checkedIdList;
+    if (newList.length > 0) {
+      newList.includes(id)
+        ? newList.splice(newList.indexOf(id), 1)
+        : newList.push(id);
     } else {
-      checkedIdList.push(id);
+      newList.push(id);
     }
+    setCheckedIdList(newList);
     console.log(checkedIdList);
   };
 

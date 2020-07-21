@@ -5,6 +5,7 @@ const AppContext = React.createContext<Context>(null);
 
 export const AppContextProvider = (props) => {
   const [checkedIdList, setCheckedIdList] = React.useState<string[]>([]);
+
   return (
     <AppContext.Provider value={{ checkedIdList, setCheckedIdList }}>
       {props.children}
