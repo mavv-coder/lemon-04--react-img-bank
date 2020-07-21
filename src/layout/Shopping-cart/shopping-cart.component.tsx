@@ -4,8 +4,10 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import { PictureInfoVm } from "../../pods/picture-list/img-list.vm";
 
 import { getImgListPromise } from "../../api/mock-data";
+import { useAppContext } from "../../common/context";
 
 export const ShoppingCart: React.FC = () => {
+  // const { setPictureList, pictureList } = usePictureListContext();
   return (
     <div style={{ width: "600px" }}>
       <ShoppingCartOutlinedIcon style={{ fontSize: "50px" }} />

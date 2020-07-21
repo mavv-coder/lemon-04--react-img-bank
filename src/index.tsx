@@ -1,18 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./app";
-
-const PictureListContext = React.createContext(null);
-
-export const PictureListContextProvider = () => {
-  return <PictureListContext.Provider value={"hola"} />;
-};
+import { AppContextProvider } from "./common/context";
 
 ReactDOM.render(
   <div>
-    <PictureListContextProvider>
+    <AppContextProvider>
       <App />
-    </PictureListContextProvider>
+    </AppContextProvider>
   </div>,
   document.getElementById("root")
 );

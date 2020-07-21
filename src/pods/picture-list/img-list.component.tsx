@@ -1,13 +1,16 @@
+import { getImgListPromise, pictureList } from "../../api/mock-data";
 import React from "react";
-import { getImgListPromise } from "../../api/mock-data";
 import { mapPictureListFromApiToVm } from "./img-list.mapper";
 import { PictureInfoVm } from "./img-list.vm";
 import { useStyles } from "./img-list.styles";
+import { useAppContext } from "../../common/context";
+// Material UI
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Box from "@material-ui/core/Box";
 
 export const ImgList: React.FC = () => {
+  const { checkedIdList, setCheckedIdList } = useAppContext();
   const [imgList, setImgList] = React.useState<PictureInfoVm[]>([]);
   const [] = React.useState<[]>([]);
   const classes = useStyles();
@@ -21,6 +24,17 @@ export const ImgList: React.FC = () => {
   React.useEffect(() => {
     onLoadImgList();
   }, []);
+
+  const handleChecked = (id) => {
+    if (checkedIdList.length > 0) {
+      checkedIdList.forEach((el, i) =>
+        el === id ? checkedIdList.splice(i, 1) : checkedIdList.push(id)
+      );
+    } else {
+      checkedIdList.push(id);
+    }
+    console.log(checkedIdList);
+  };
 
   return (
     // <div className={`${classes.root}, ${classes.flexContainer}`}>
@@ -45,6 +59,7 @@ export const ImgList: React.FC = () => {
                     defaultChecked={img.selected}
                     name="checkedB"
                     color="primary"
+                    onChange={() => handleChecked(img.id)}
                   ></Checkbox>
                 }
                 label="Buy"
