@@ -19,12 +19,8 @@ export const ImgList: React.FC = () => {
 
   const switchSelectedPictureProp = (id: string): void => {
     const newList = pictureList.map((el) => {
-      if (el.id === id) {
-        el.selected = !el.selected;
-        return el;
-      } else {
-        return el;
-      }
+      if (el.id === id) el.selected = !el.selected;
+      return el;
     });
     setPictureList(newList);
   };
