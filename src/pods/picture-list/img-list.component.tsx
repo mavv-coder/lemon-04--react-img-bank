@@ -16,6 +16,11 @@ export const ImgList: React.FC = () => {
   } = useAppContext();
   const [] = React.useState<[]>([]);
   const classes = useStyles();
+  const { setVisibleCart } = useAppContext();
+
+  React.useEffect(() => {
+    setVisibleCart(true);
+  }, []);
 
   const switchSelectedPictureProp = (id: string): void => {
     const newList = pictureList.map((el) => {

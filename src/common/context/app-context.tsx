@@ -8,6 +8,7 @@ const AppContext = React.createContext<Context>(null);
 export const AppContextProvider = (props) => {
   const [checkedIdList, setCheckedIdList] = React.useState<string[]>([]);
   const [pictureList, setPictureList] = React.useState<PictureInfoVm[]>([]);
+  const [visibleCart, setVisibleCart] = React.useState<boolean>(false);
 
   const onLoadPictureList = () => {
     getPictureListPromise()
@@ -21,7 +22,14 @@ export const AppContextProvider = (props) => {
 
   return (
     <AppContext.Provider
-      value={{ checkedIdList, setCheckedIdList, pictureList, setPictureList }}
+      value={{
+        checkedIdList,
+        setCheckedIdList,
+        pictureList,
+        setPictureList,
+        visibleCart,
+        setVisibleCart,
+      }}
     >
       {props.children}
     </AppContext.Provider>

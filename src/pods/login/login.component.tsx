@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useAppContext } from "../../common/context";
 
 // Material UI ~ imports
 import { makeStyles } from "@material-ui/core/styles";
@@ -42,6 +43,7 @@ export const LoginPage: React.FC = () => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const classes = useStyles();
+  const { setVisibleCart } = useAppContext();
 
   const handleNavigation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -51,6 +53,10 @@ export const LoginPage: React.FC = () => {
       alert("User / password not valid, psst... admin / test");
     }
   };
+
+  React.useEffect(() => {
+    setVisibleCart(false);
+  }, []);
 
   return (
     <div style={{ height: "100vh" }}>

@@ -10,4 +10,6 @@ export interface Context {
   setCheckedIdList: (value: string[]) => void;
   pictureList: PictureInfoVm[];
   setPictureList: (value: PictureInfoVm[]) => void;
+  visibleCart: boolean;
+  setVisibleCart: (value: boolean) => void;
 }
