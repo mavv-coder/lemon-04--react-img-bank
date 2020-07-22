@@ -1,42 +1,13 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useAppContext } from "../../common/context";
+import useStyles from "./login.styles";
 
 // Material UI ~ imports
-import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { Typography } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
-
-// Material UI ~ styles
-const useStyles = makeStyles((theme) => ({
-  root1: {
-    height: "100vh",
-    maxWidth: "max-content",
-    display: "grid",
-    alignItems: "start",
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-  con: {
-    maxWidth: "100%",
-    textAlign: "center",
-    marginTop: "50px",
-  },
-  label: {
-    fontSize: "18px",
-    display: "inline-block",
-    marginRight: "10px",
-  },
-  flexContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "10px",
-  },
-}));
 
 export const LoginPage: React.FC = () => {
   const history = useHistory();
@@ -44,6 +15,10 @@ export const LoginPage: React.FC = () => {
   const [password, setPassword] = React.useState("");
   const classes = useStyles();
   const { setVisibleCart } = useAppContext();
+
+  React.useEffect(() => {
+    setVisibleCart(false);
+  }, []);
 
   const handleNavigation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,12 +29,8 @@ export const LoginPage: React.FC = () => {
     }
   };
 
-  React.useEffect(() => {
-    setVisibleCart(false);
-  }, []);
-
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "100vh", width: "100%" }}>
       <Typography
         variant="h1"
         style={{ fontSize: "60px", marginTop: "20px", textAlign: "center" }}
@@ -101,8 +72,8 @@ export const LoginPage: React.FC = () => {
             <Button
               type="submit"
               variant="contained"
+              color="primary"
               style={{
-                backgroundColor: "#2BB686",
                 color: "white",
                 marginTop: "20px",
               }}
