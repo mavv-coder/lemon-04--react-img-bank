@@ -1,5 +1,31 @@
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import { Typography } from "@material-ui/core";
-import Container from "@material-ui/core/Container";
+
+const useStyles = makeStyles((theme) => ({
+  root1: {
+    height: "100vh",
+    maxWidth: "max-content",
+    display: "grid",
+    alignItems: "start",
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+  con: {
+    maxWidth: "100%",
+    textAlign: "center",
+    marginTop: "50px",
+  },
+  label: {
+    fontSize: "18px",
+    display: "inline-block",
+    marginRight: "10px",
+  },
+  flexContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "10px",
+  },
+}));
+
+export default useStyles;
