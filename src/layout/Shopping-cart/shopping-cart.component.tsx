@@ -17,15 +17,16 @@ export const ShoppingCart: React.FC = () => {
       <ShoppingCartOutlinedIcon style={{ fontSize: "50px" }} />
       <span>Cart</span>
 
-      {pictureList.map((el) => (
-        <div key={el.id}>
-          {!el.selected && el.title}
-          <DeleteForeverIcon
-            style={{ fontSize: "30px" }}
-            onClick={() => console.log("delete")}
-          />
-        </div>
-      ))}
+      {pictureList.length > 0 &&
+        pictureList.map((el) => (
+          <div key={el.id}>
+            {el.selected && el.title}
+            <DeleteForeverIcon
+              style={{ fontSize: "30px" }}
+              onClick={() => console.log("delete")}
+            />
+          </div>
+        ))}
     </div>
   );
 };

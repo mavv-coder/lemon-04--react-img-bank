@@ -8,9 +8,26 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Box from "@material-ui/core/Box";
 
 export const ImgList: React.FC = () => {
-  const { checkedIdList, setCheckedIdList, pictureList } = useAppContext();
+  const {
+    checkedIdList,
+    setCheckedIdList,
+    pictureList,
+    setPictureList,
+  } = useAppContext();
   const [] = React.useState<[]>([]);
   const classes = useStyles();
+
+  const switchSelectedPictureProp = (id: string): void => {
+    const newList = pictureList.map((el) => {
+      if (el.id === id) {
+        el.selected = !el.selected;
+        return el;
+      } else {
+        return el;
+      }
+    });
+    setPictureList(newList);
+  };
 
   const handleCheckedList = (id: string): void => {
     const newList = checkedIdList;
@@ -22,7 +39,8 @@ export const ImgList: React.FC = () => {
       newList.push(id);
     }
     setCheckedIdList(newList);
-    console.log(checkedIdList);
+    switchSelectedPictureProp(id);
+    console.log(pictureList);
   };
 
   return (
@@ -45,9 +63,10 @@ export const ImgList: React.FC = () => {
               <FormControlLabel
                 control={
                   <Checkbox
-                    defaultChecked={img.selected}
+                    // defaultChecked={img.selected}
                     name="checkedB"
                     color="primary"
+                    checked={img.selected}
                     onChange={() => handleCheckedList(img.id)}
                   ></Checkbox>
                 }
