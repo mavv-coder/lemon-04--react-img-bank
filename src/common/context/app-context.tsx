@@ -1,17 +1,19 @@
 import { getPictureListPromise } from "../../api/mock-data";
 import React from "react";
 import { mapPictureListFromApiToVm } from "../../pods/picture-list/picture-list.mapper";
-import { Context, productInfoVm } from "./app-context.model";
+import { Context, ProductInfoEntity } from "./app-context.model";
 import { PictureInfoVm } from "../../pods/picture-list";
 
 const AppContext = React.createContext<Context>(null);
 
 export const AppContextProvider = (props) => {
   const [checkedProductList, setCheckedProductList] = React.useState<
-    productInfoVm[]
+    ProductInfoEntity[]
   >([]);
   const [pictureList, setPictureList] = React.useState<PictureInfoVm[]>([]);
   const [visibleCart, setVisibleCart] = React.useState<boolean>(false);
+
+  // toogleItem
 
   const onLoadPictureList = () => {
     getPictureListPromise()

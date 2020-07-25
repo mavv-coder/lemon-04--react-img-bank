@@ -1,14 +1,14 @@
 import { PictureInfoVm } from "../../pods/picture-list";
 
-export interface productInfoVm {
+export interface ProductInfoEntity {
   id: string;
   picUrl: string;
   title: string;
 }
 
 export interface Context {
-  checkedProductList: productInfoVm[];
-  setCheckedProductList: (value: productInfoVm[]) => void;
+  checkedProductList: ProductInfoEntity[];
+  setCheckedProductList: (value: ProductInfoEntity[]) => void;
   pictureList: PictureInfoVm[];
   setPictureList: (value: PictureInfoVm[]) => void;
   visibleCart: boolean;

@@ -6,6 +6,8 @@ const mapPictureInfoFromApiToVm = (picture: PictureInfo): PictureInfoVm => ({
   selected: false,
 });
 
+// Map to Entity
+
 export const mapPictureListFromApiToVm = (
   pictureList: PictureInfo[]
 ): PictureInfoVm[] => pictureList.map((e) => mapPictureInfoFromApiToVm(e));
