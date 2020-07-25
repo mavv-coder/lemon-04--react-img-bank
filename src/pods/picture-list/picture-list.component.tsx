@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useStyles } from "./img-list.styles";
+import { useStyles } from "./picture-list.styles";
 import { useAppContext } from "../../common/context";
 // Material UI
 import Checkbox from "@material-ui/core/Checkbox";

@@ -1,7 +1,8 @@
 import { getPictureListPromise } from "../../api/mock-data";
 import React from "react";
-import { mapPictureListFromApiToVm } from "./picture-list.mapper";
-import { Context, PictureInfoVm } from "./app-context.models";
+import { mapPictureListFromApiToVm } from "../../pods/picture-list/picture-list.mapper";
+import { Context } from "./app-context.model";
+import { PictureInfoVm } from "../../pods/picture-list";
 
 const AppContext = React.createContext<Context>(null);
 

@@ -1,5 +1,5 @@
 import { PictureInfo } from "../../api/mock-data";
-import { PictureInfoVm } from "./app-context.models";
+import { PictureInfoVm } from "./picture-list.vm";
 
 const mapPictureInfoFromApiToVm = (picture: PictureInfo): PictureInfoVm => ({
   ...picture,

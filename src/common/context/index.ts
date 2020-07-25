@@ -1,3 +1,3 @@
 export * from "./app-context";
-export * from "./app-context.models";
-export * from "./picture-list.mapper";
+export * from "./app-context.model";
+export * from "../../pods/picture-list/picture-list.mapper";

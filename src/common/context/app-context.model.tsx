@@ -1,9 +1,4 @@
-export interface PictureInfoVm {
-  id: string;
-  picUrl: string;
-  title: string;
-  selected: boolean;
-}
+import { PictureInfoVm } from "../../pods/picture-list";
 
 export interface Context {
   checkedIdList: string[];

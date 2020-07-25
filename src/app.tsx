@@ -1,6 +1,6 @@
 import React from "react";
 import { RouterComponent } from "./router";
-import { ShoppingCart } from "./layout/Shopping-cart/shopping-cart.component";
+import { ShoppingCart } from "./pods/Shopping-cart/shopping-cart.component";
 import { useAppContext } from "./common/context";
 
 export const App = () => {
