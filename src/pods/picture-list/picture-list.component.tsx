@@ -9,8 +9,8 @@ import Box from "@material-ui/core/Box";
 
 export const ImgList: React.FC = () => {
   const {
-    checkedIdList,
-    setCheckedIdList,
+    checkedProductList,
+    setCheckedProductList,
     pictureList,
     setPictureList,
   } = useAppContext();
@@ -30,18 +30,19 @@ export const ImgList: React.FC = () => {
     setPictureList(newList);
   };
 
-  const handleCheckedList = (id: string): void => {
-    const newList = checkedIdList;
+  const handleCheckedList = (img): void => {
+    switchSelectedPictureProp(img.id);
+    const newList = checkedProductList;
+    console.log(img);
     if (newList.length > 0) {
-      newList.includes(id)
-        ? newList.splice(newList.indexOf(id), 1)
-        : newList.push(id);
+      newList.includes(img)
+        ? newList.splice(newList.indexOf(img), 1)
+        : newList.push(img);
     } else {
-      newList.push(id);
+      newList.push(img);
     }
-    setCheckedIdList(newList);
-    switchSelectedPictureProp(id);
-    console.log(pictureList);
+    setCheckedProductList(newList);
+    console.log(checkedProductList);
   };
 
   return (
@@ -53,7 +54,7 @@ export const ImgList: React.FC = () => {
         justifyContent="space-between"
         p={1}
         m={1}
-        bgcolor="red"
+        bgcolor="#ccc"
         css={{ maxWidth: 300 }}
       >
         {pictureList.map((img) => (
@@ -68,7 +69,7 @@ export const ImgList: React.FC = () => {
                     name="checkedB"
                     color="primary"
                     checked={img.selected}
-                    onChange={() => handleCheckedList(img.id)}
+                    onChange={() => handleCheckedList(img)}
                   ></Checkbox>
                 }
                 label="Buy"
