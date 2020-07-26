@@ -28,6 +28,18 @@ export const PictureListContainer: React.FC = () => {
     onLoadPictureList();
   }, []);
 
+  const checkisInList = (movie: PictureInfoVm) =>
+    checkedProductList.findIndex((product) => product.id === movie.id) !== -1;
+
+  React.useEffect(() => {
+    const newPictureList = pictureList.map((movie) => {
+      const isInList = checkisInList(movie);
+      movie.selected = isInList; //NO ME GUSTA. DEBERÍA TENER MEJOR RENDIMIENTO AQUÍ
+      return movie;
+    });
+    setPictureList(newPictureList);
+  }, [checkedProductList]);
+
   const handleCheckedList = (product: PictureInfoVm): void => {
     const productEntity = mapPictureInfoFromVmToContext(product);
     updateCartList(productEntity);
