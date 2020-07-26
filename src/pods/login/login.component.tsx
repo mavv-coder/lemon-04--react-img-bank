@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { useAppContext } from "../../common/context";
+import { useAppContext } from "../../core/context";
 import useStyles from "./login.styles";
 
 // Material UI ~ imports

@@ -2,7 +2,7 @@ import React from "react";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
-import { useAppContext } from "../../common/context";
+import { useAppContext } from "../../core/context";
 
 export const ShoppingCart: React.FC = () => {
   const { checkedProductList, updateCartList } = useAppContext();

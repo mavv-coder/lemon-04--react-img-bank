@@ -1,6 +1,6 @@
 import React from "react";
 import { getPictureListPromise } from "../../api/mock-data";
-import { useAppContext } from "../../common/context";
+import { useAppContext } from "../../core/context";
 import {
   mapPictureListFromApiToVm,
   mapPictureInfoFromVmToContext,

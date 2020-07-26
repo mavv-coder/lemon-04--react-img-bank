@@ -1,5 +1,5 @@
 import { ApiItemInfoEntity } from "../../api/mock-data";
-import { ProductInfoEntity } from "../../common/context";
+import { ProductInfoEntity } from "../../core/context";
 import { PictureInfoVm } from "./picture-list.vm";
 
 // MAP from api to picture-list page

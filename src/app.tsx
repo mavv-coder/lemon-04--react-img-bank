@@ -1,7 +1,7 @@
 import React from "react";
-import { RouterComponent } from "./router";
+import { RouterComponent } from "./core/router";
 import { ShoppingCart } from "./pods/Shopping-cart/shopping-cart.component";
-import { useAppContext } from "./common/context";
+import { useAppContext } from "./core/context";
 
 export const App = () => {
   const { visibleCart } = useAppContext();

@@ -1,8 +1,8 @@
 import React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { switchRoutes } from "./routes";
-import { LoginPage } from "../pods/login";
-import { PictureListContainer } from "../pods/picture-list";
+import { LoginPage } from "../../pods/login";
+import { PictureListContainer } from "../../pods/picture-list";
 
 export const RouterComponent: React.FC = () => {
   const { pictureList, login, root } = switchRoutes;
