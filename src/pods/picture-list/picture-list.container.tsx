@@ -1,7 +1,10 @@
 import React from "react";
 import { getPictureListPromise } from "../../api/mock-data";
 import { useAppContext } from "../../common/context";
-import { mapPictureListFromApiToVm } from "./picture-list.mapper";
+import {
+  mapPictureListFromApiToVm,
+  mapPictureInfoFromVmToContext,
+} from "./picture-list.mapper";
 import { PictureInfoVm } from "./picture-list.vm";
 import { PictureList } from "./picture-list.component";
 
@@ -21,28 +24,33 @@ export const PictureListContainer: React.FC = () => {
     onLoadPictureList();
   }, []);
 
-  //   const switchSelectedPictureProp = (id: string): void => {
-  //     const newList = pictureList.map((el) => {
-  //       if (el.id === id) el.selected = !el.selected;
-  //       return el;
-  //     });
-  //     setPictureList(newList);
-  //   };
+  // const switchSelectedPictureProp = (id: string): void => {
+  //   const newList = pictureList.map((el) => {
+  //     if (el.id === id) el.selected = !el.selected;
+  //     return el;
+  //   });
+  //   setPictureList(newList);
+  // };
 
-  const handleCheckedList = (img): void => {
+  const handleCheckedList = (img: PictureInfoVm): void => {
     // switchSelectedPictureProp(img.id);
-    const newList = checkedProductList;
-    console.log(img);
+    const contextModelImg = mapPictureInfoFromVmToContext(img);
+    const newList = checkedProductList.map((el) => el);
     if (newList.length > 0) {
-      newList.includes(img)
-        ? newList.splice(newList.indexOf(img), 1)
-        : newList.push(img);
+      newList.includes(contextModelImg)
+        ? console.log("Lo incluye")
+        : console.log("NO Lo incluye");
     } else {
-      newList.push(img);
+      newList.push(contextModelImg);
     }
     setCheckedProductList(newList);
     console.log(checkedProductList);
   };
 
-  return <PictureList pictureList={pictureList} />;
+  return (
+    <PictureList
+      handleCheckedList={handleCheckedList}
+      pictureList={pictureList}
+    />
+  );
 };

@@ -15,15 +15,10 @@ export const mapPictureListFromApiToVm = (
 ): PictureInfoVm[] => pictureList.map((e) => mapPictureInfoFromApiToVm(e));
 
 // MAP from picture-list page to context
-const mapPictureInfoFromVmToContext = (
+export const mapPictureInfoFromVmToContext = (
   picture: PictureInfoVm
 ): ProductInfoEntity => ({
   id: picture.id,
   picUrl: picture.picUrl,
   title: picture.title,
 });
-
-export const mapPictureListFromVmToContext = (
-  pictureList: PictureInfoVm[]
-): ProductInfoEntity[] =>
-  pictureList.map((e) => mapPictureInfoFromVmToContext(e));

@@ -9,9 +9,11 @@ import Box from "@material-ui/core/Box";
 
 interface Props {
   pictureList: PictureInfoVm[];
+  handleCheckedList: (img: PictureInfoVm) => void;
 }
 
-export const PictureList: React.FC<Props> = (pictureList) => {
+export const PictureList: React.FC<Props> = (props) => {
+  const { pictureList, handleCheckedList } = props;
   const classes = useStyles();
 
   return (
@@ -33,17 +35,14 @@ export const PictureList: React.FC<Props> = (pictureList) => {
               <FormControlLabel
                 control={
                   <Checkbox
-                    // defaultChecked={img.selected}
                     name="checkedB"
                     color="primary"
                     checked={img.selected}
-                    // onChange={() => handleCheckedList(img)}
+                    onChange={() => handleCheckedList(img)}
                   ></Checkbox>
                 }
                 label="Buy"
               />
-
-              {/* <input type="checkbox" defaultChecked={img.selected}></input> */}
             </div>
           </Box>
         ))}
