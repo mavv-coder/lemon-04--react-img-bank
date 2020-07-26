@@ -9,9 +9,13 @@ import { PictureInfoVm } from "./picture-list.vm";
 import { PictureList } from "./picture-list.component";
 
 export const PictureListContainer: React.FC = () => {
-  const { setVisibleCart, toggleSelected } = useAppContext();
+  const {
+    setVisibleCart,
+    updateCartList,
+    checkedProductList,
+    setCheckedProductList,
+  } = useAppContext();
   const [pictureList, setPictureList] = React.useState<PictureInfoVm[]>([]);
-  const { checkedProductList, setCheckedProductList } = useAppContext();
 
   const onLoadPictureList = () => {
     getPictureListPromise()
@@ -24,28 +28,9 @@ export const PictureListContainer: React.FC = () => {
     onLoadPictureList();
   }, []);
 
-  // const switchSelectedPictureProp = (id: string): void => {
-  //   const newList = pictureList.map((el) => {
-  //     if (el.id === id) el.selected = !el.selected;
-  //     return el;
-  //   });
-  //   setPictureList(newList);
-  // };
-
-  const handleCheckedList = (img: PictureInfoVm): void => {
-    // switchSelectedPictureProp(img.id);
-    setPictureList(toggleSelected(pictureList, img.id));
-    // const contextModelImg = mapPictureInfoFromVmToContext(img);
-    // const newList = checkedProductList.map((el) => el);
-    // if (newList.length > 0) {
-    //   newList.includes(contextModelImg)
-    //     ? newList.splice(newList.indexOf(contextModelImg), 1)
-    //     : newList.push(contextModelImg);
-    // } else {
-    //   newList.push(contextModelImg);
-    // }
-    // setCheckedProductList(newList);
-    console.log(pictureList);
+  const handleCheckedList = (product: PictureInfoVm): void => {
+    const productEntity = mapPictureInfoFromVmToContext(product);
+    updateCartList(productEntity);
   };
 
   return (

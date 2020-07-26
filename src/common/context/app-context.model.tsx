@@ -11,5 +11,5 @@ export interface Context {
   setCheckedProductList: (value: ProductInfoEntity[]) => void;
   visibleCart: boolean;
   setVisibleCart: (value: boolean) => void;
-  toggleSelected: (list, id) => [];
+  updateCartList: (product: ProductInfoEntity) => void;
 }
