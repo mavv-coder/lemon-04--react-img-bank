@@ -9,6 +9,12 @@ export const AppContextProvider = (props) => {
   >([]);
   const [visibleCart, setVisibleCart] = React.useState<boolean>(false);
 
+  const toggleSelected = (list, id) =>
+    list.map((el) => {
+      if (el.id === id) el.selected = !el.selected;
+      return el;
+    });
+
   return (
     <AppContext.Provider
       value={{
@@ -16,6 +22,7 @@ export const AppContextProvider = (props) => {
         setCheckedProductList,
         visibleCart,
         setVisibleCart,
+        toggleSelected,
       }}
     >
       {props.children}
