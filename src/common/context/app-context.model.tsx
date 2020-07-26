@@ -9,8 +9,6 @@ export interface ProductInfoEntity {
 export interface Context {
   checkedProductList: ProductInfoEntity[];
   setCheckedProductList: (value: ProductInfoEntity[]) => void;
-  pictureList: PictureInfoVm[];
-  setPictureList: (value: PictureInfoVm[]) => void;
   visibleCart: boolean;
   setVisibleCart: (value: boolean) => void;
 }

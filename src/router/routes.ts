@@ -1,11 +1,11 @@
 interface SwitchRoutes {
   root: string;
   login: string;
-  imgList: string;
+  pictureList: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
   root: "/",
   login: "/login",
-  imgList: "/img-list",
+  pictureList: "/img-list",
 };

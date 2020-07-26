@@ -8,20 +8,20 @@ export const ShoppingCart: React.FC = () => {
   const {
     checkedProductList,
     setCheckedProductList,
-    pictureList,
-    setPictureList,
+    // pictureList,
+    // setPictureList,
   } = useAppContext();
 
-  const switchSelectedPictureProp = (id: string): void => {
-    const newList = pictureList.map((el) => {
-      if (el.id === id) el.selected = !el.selected;
-      return el;
-    });
-    setPictureList(newList);
-  };
+  // const switchSelectedPictureProp = (id: string): void => {
+  //   const newList = pictureList.map((el) => {
+  //     if (el.id === id) el.selected = !el.selected;
+  //     return el;
+  //   });
+  //   setPictureList(newList);
+  // };
 
   const handleDeleteIcon = (id) => {
-    switchSelectedPictureProp(id);
+    // switchSelectedPictureProp(id);
     const newList = checkedProductList.filter((el) => {
       return el.id !== id;
     });
@@ -42,7 +42,7 @@ export const ShoppingCart: React.FC = () => {
       <ShoppingCartOutlinedIcon style={{ fontSize: "50px" }} />
       <span>Cart</span>
 
-      {pictureList.length > 0 &&
+      {checkedProductList.length > 0 &&
         checkedProductList.map((el) => (
           <div key={el.id}>
             <img src={el.picUrl} style={{ width: 50 }} />

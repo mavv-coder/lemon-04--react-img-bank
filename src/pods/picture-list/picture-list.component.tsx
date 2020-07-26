@@ -1,52 +1,20 @@
 import React from "react";
-
 import { useStyles } from "./picture-list.styles";
-import { useAppContext } from "../../common/context";
+import { PictureInfoVm } from "./picture-list.vm";
+
 // Material UI
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Box from "@material-ui/core/Box";
 
-export const ImgList: React.FC = () => {
-  const {
-    checkedProductList,
-    setCheckedProductList,
-    pictureList,
-    setPictureList,
-  } = useAppContext();
-  const [] = React.useState<[]>([]);
+interface Props {
+  pictureList: PictureInfoVm[];
+}
+
+export const PictureList: React.FC<Props> = (pictureList) => {
   const classes = useStyles();
-  const { setVisibleCart } = useAppContext();
-
-  React.useEffect(() => {
-    setVisibleCart(true);
-  }, []);
-
-  const switchSelectedPictureProp = (id: string): void => {
-    const newList = pictureList.map((el) => {
-      if (el.id === id) el.selected = !el.selected;
-      return el;
-    });
-    setPictureList(newList);
-  };
-
-  const handleCheckedList = (img): void => {
-    switchSelectedPictureProp(img.id);
-    const newList = checkedProductList;
-    console.log(img);
-    if (newList.length > 0) {
-      newList.includes(img)
-        ? newList.splice(newList.indexOf(img), 1)
-        : newList.push(img);
-    } else {
-      newList.push(img);
-    }
-    setCheckedProductList(newList);
-    console.log(checkedProductList);
-  };
 
   return (
-    // <div className={`${classes.root}, ${classes.flexContainer}`}>
     <div className={`${classes.root}`}>
       <Box
         display="flex"
@@ -69,7 +37,7 @@ export const ImgList: React.FC = () => {
                     name="checkedB"
                     color="primary"
                     checked={img.selected}
-                    onChange={() => handleCheckedList(img)}
+                    // onChange={() => handleCheckedList(img)}
                   ></Checkbox>
                 }
                 label="Buy"

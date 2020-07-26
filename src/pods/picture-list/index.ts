@@ -1,2 +1,2 @@
-export * from "./picture-list.component";
+export * from "./picture-list.container";
 export * from "./picture-list.vm";

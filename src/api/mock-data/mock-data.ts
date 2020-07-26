@@ -1,6 +1,6 @@
-import { PictureInfo } from "./mock-data.model";
+import { ApiItemInfoEntity } from "./mock-data.model";
 
-export const pictureApiList: PictureInfo[] = [
+export const pictureApiList: ApiItemInfoEntity[] = [
   {
     id: "01",
     picUrl: "./src/api/assets/01.jpg",
@@ -38,6 +38,6 @@ export const pictureApiList: PictureInfo[] = [
   },
 ];
 
-export const getPictureListPromise = (): Promise<PictureInfo[]> => {
+export const getPictureListPromise = (): Promise<ApiItemInfoEntity[]> => {
   return Promise.resolve(pictureApiList);
 };
