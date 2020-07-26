@@ -13,7 +13,6 @@ export const PictureListContainer: React.FC = () => {
     setVisibleCart,
     updateCartList,
     checkedProductList,
-    setCheckedProductList,
   } = useAppContext();
   const [pictureList, setPictureList] = React.useState<PictureInfoVm[]>([]);
 
@@ -28,14 +27,19 @@ export const PictureListContainer: React.FC = () => {
     onLoadPictureList();
   }, []);
 
-  const checkisInList = (movie: PictureInfoVm) =>
+  const checkisInList = (movie: PictureInfoVm): boolean =>
     checkedProductList.findIndex((product) => product.id === movie.id) !== -1;
+
+  const updateSelectedProperty = (
+    isInList: boolean,
+    movie: PictureInfoVm
+  ): PictureInfoVm =>
+    movie.selected === isInList ? movie : { ...movie, selected: isInList };
 
   React.useEffect(() => {
     const newPictureList = pictureList.map((movie) => {
       const isInList = checkisInList(movie);
-      movie.selected = isInList; //NO ME GUSTA. DEBERÍA TENER MEJOR RENDIMIENTO AQUÍ
-      return movie;
+      return updateSelectedProperty(isInList, movie);
     });
     setPictureList(newPictureList);
   }, [checkedProductList]);
