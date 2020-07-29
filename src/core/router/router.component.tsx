@@ -1,7 +1,8 @@
 import React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import { switchRoutes } from "./routes";
-import { LoginPage } from "../../pods/login";
+import { LoginScene } from "../../scenes";
+
 import { PictureListContainer } from "../../pods/picture-list";
 
 export const RouterComponent: React.FC = () => {
@@ -9,7 +10,7 @@ export const RouterComponent: React.FC = () => {
   return (
     <Router>
       <Switch>
-        <Route exact={true} path={[root, login]} component={LoginPage} />
+        <Route exact={true} path={[root, login]} component={LoginScene} />
         <Route
           exact={true}
           path={pictureList}
