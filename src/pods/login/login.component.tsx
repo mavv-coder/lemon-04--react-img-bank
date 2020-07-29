@@ -9,7 +9,7 @@ import TextField from "@material-ui/core/TextField";
 import { Typography } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 
-export const LoginPage: React.FC = () => {
+export const LoginComponent: React.FC = () => {
   const history = useHistory();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
