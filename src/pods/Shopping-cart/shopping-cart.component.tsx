@@ -1,9 +1,13 @@
 import React from "react";
 import { ProductInfoEntity } from "../../core/context";
+import { useStyles } from "./shopping-cart.styles";
 
 // Material UI ~ Components
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import { Typography } from "@material-ui/core";
+import Paper from "@material-ui/core/Paper";
+import Divider from "@material-ui/core/Divider";
 
 interface Props {
   checkedProductList: ProductInfoEntity[];
@@ -12,24 +16,29 @@ interface Props {
 
 export const ShoppingCartComponent: React.FC<Props> = (props) => {
   const { checkedProductList, updateCartList } = props;
+  const classes = useStyles();
 
   return (
-    <div style={{ width: "600px" }}>
-      <ShoppingCartOutlinedIcon style={{ fontSize: "50px" }} />
-      <span>Cart</span>
+    <Paper className={classes.root}>
+      <div className={classes.flexContainer}>
+        <ShoppingCartOutlinedIcon className={classes.cartIcon} />
+        <Typography className={classes.title}>Shopping Cart</Typography>
+      </div>
+      <Divider />
+      <ul className={classes.list}>
+        {checkedProductList.length > 0 &&
+          checkedProductList.map((product) => (
+            <li key={product.id} className={classes.listItem}>
+              <img src={product.picUrl} className={classes.listImg} />
+              <Typography>{product.title}</Typography>
 
-      {checkedProductList.length > 0 &&
-        checkedProductList.map((product) => (
-          <div key={product.id}>
-            <img src={product.picUrl} style={{ width: 50 }} />
-            <span>{product.title}</span>
-
-            <DeleteForeverIcon
-              style={{ fontSize: "30px" }}
-              onClick={() => updateCartList(product)}
-            />
-          </div>
-        ))}
-    </div>
+              <HighlightOffIcon
+                className={classes.deleteIcon}
+                onClick={() => updateCartList(product)}
+              />
+            </li>
+          ))}
+      </ul>
+    </Paper>
   );
 };
