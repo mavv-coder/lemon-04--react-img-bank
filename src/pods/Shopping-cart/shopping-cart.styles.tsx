@@ -6,6 +6,7 @@ export const useStyles = makeStyles(() => ({
     width: "100%",
     maxWidth: 360,
     backgroundColor: "#e6ecff",
+    height: "max-content",
   },
   flexContainer: {
     display: "flex",
@@ -29,6 +30,7 @@ export const useStyles = makeStyles(() => ({
     margin: 0,
     paddingLeft: "10px",
     paddingTop: "10px",
+    paddingBottom: "10px",
   },
   listItem: {
     display: "flex",

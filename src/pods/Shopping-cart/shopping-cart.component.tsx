@@ -39,6 +39,7 @@ export const ShoppingCartComponent: React.FC<Props> = (props) => {
             </li>
           ))}
       </ul>
+      {checkedProductList.length > 0 && <Divider />}
     </Paper>
   );
 };
