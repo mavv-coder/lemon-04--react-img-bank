@@ -1,34 +1,27 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import { useAppContext } from "../../core/context";
 import useStyles from "./login.styles";
-
-// Material UI ~ imports
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { Typography } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 
-export const LoginComponent: React.FC = () => {
-  const history = useHistory();
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
+interface Props {
+  username: string;
+  setUsername: (value: string) => void;
+  password: string;
+  setPassword: (value: string) => void;
+  handleNavigation: (e: React.FormEvent<HTMLFormElement>) => void;
+}
+
+export const LoginComponent: React.FC<Props> = (props) => {
+  const {
+    username,
+    password,
+    setUsername,
+    setPassword,
+    handleNavigation,
+  } = props;
   const classes = useStyles();
-  const { setVisibleCart, setVisibleCartIcon } = useAppContext();
-
-  React.useEffect(() => {
-    setVisibleCart(false);
-    setVisibleCartIcon(false);
-  }, []);
-
-  const handleNavigation = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (username === "admin" && password === "test") {
-      history.push("/img-list");
-    } else {
-      alert("User / password not valid, psst... admin / test");
-    }
-  };
 
   return (
     <div style={{ height: "100vh", width: "100%" }}>

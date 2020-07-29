@@ -9,7 +9,7 @@ import Box from "@material-ui/core/Box";
 
 interface Props {
   pictureList: PictureInfoVm[];
-  handleCheckedList: (img: PictureInfoVm) => void;
+  handleCheckedList: (product: PictureInfoVm) => void;
 }
 
 export const PictureList: React.FC<Props> = (props) => {
