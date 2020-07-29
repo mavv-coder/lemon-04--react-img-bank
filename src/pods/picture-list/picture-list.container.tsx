@@ -6,7 +6,7 @@ import {
   mapPictureInfoFromVmToContext,
 } from "./picture-list.mapper";
 import { PictureInfoVm } from "./picture-list.vm";
-import { PictureList } from "./picture-list.component";
+import { PictureListComponent } from "./picture-list.component";
 
 export const PictureListContainer: React.FC = () => {
   const {
@@ -52,7 +52,7 @@ export const PictureListContainer: React.FC = () => {
   };
 
   return (
-    <PictureList
+    <PictureListComponent
       handleCheckedList={handleCheckedList}
       pictureList={pictureList}
     />

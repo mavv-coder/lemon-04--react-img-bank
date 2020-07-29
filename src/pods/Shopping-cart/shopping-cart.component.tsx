@@ -1,11 +1,17 @@
 import React from "react";
+import { ProductInfoEntity } from "../../core/context";
+
+// Material UI ~ Components
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
-import { useAppContext } from "../../core/context";
+interface Props {
+  checkedProductList: ProductInfoEntity[];
+  updateCartList: (product: ProductInfoEntity) => void;
+}
 
-export const ShoppingCart: React.FC = () => {
-  const { checkedProductList, updateCartList } = useAppContext();
+export const ShoppingCartComponent: React.FC<Props> = (props) => {
+  const { checkedProductList, updateCartList } = props;
 
   return (
     <div style={{ width: "600px" }}>

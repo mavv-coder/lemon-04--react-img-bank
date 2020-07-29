@@ -14,7 +14,7 @@ interface Props {
   handleCheckedList: (product: PictureInfoVm) => void;
 }
 
-export const PictureList: React.FC<Props> = (props) => {
+export const PictureListComponent: React.FC<Props> = (props) => {
   const { pictureList, handleCheckedList } = props;
   const classes = useStyles();
 
