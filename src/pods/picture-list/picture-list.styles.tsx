@@ -1,25 +1,23 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles(() => ({
   root: {
+    flexGrow: 1,
     textAlign: "center",
-    width: "100%",
-    "& > *": {
-      margin: theme.spacing(1),
-    },
+    marginLeft: "3px",
+    marginTop: "20px",
   },
-  flexContainer: {
-    padding: "20px",
-    display: "flex",
-    justifyContent: "space-around",
-    flexWrap: "wrap",
+  paper: {
+    margin: "10px",
+    padding: "5px",
+    backgroundColor: "#e6ecff",
+    minWidth: "200px",
   },
   pictures: {
-    width: "20%",
-    minWidth: "200px",
-    flex: 1,
+    margin: "10px",
   },
   poster: {
     width: "100px",
+    marginBottom: "10px",
   },
 }));

@@ -1,11 +1,13 @@
 import React from "react";
-import { useStyles } from "./picture-list.styles";
 import { PictureInfoVm } from "./picture-list.vm";
+import { useStyles } from "./picture-list.styles";
 
-// Material UI
+// Material UI ~ Components
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Box from "@material-ui/core/Box";
+import { Typography } from "@material-ui/core";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 interface Props {
   pictureList: PictureInfoVm[];
@@ -17,21 +19,13 @@ export const PictureList: React.FC<Props> = (props) => {
   const classes = useStyles();
 
   return (
-    <div className={`${classes.root}`}>
-      <Box
-        display="flex"
-        flexWrap="wrap"
-        justifyContent="space-between"
-        p={1}
-        m={1}
-        bgcolor="#ccc"
-        css={{ maxWidth: 300 }}
-      >
+    <div className={classes.root}>
+      <Grid container spacing={3}>
         {pictureList.map((img) => (
-          <Box key={img.id} p={1} bgcolor="grey.300" style={{ margin: "10px" }}>
+          <Paper key={img.id} className={classes.paper}>
             <div className={classes.pictures}>
               <img src={img.picUrl} alt="img" className={classes.poster} />
-              <p>{img.title}</p>
+              <Typography>{img.title}</Typography>
               <FormControlLabel
                 control={
                   <Checkbox
@@ -44,9 +38,9 @@ export const PictureList: React.FC<Props> = (props) => {
                 label="Buy"
               />
             </div>
-          </Box>
+          </Paper>
         ))}
-      </Box>
+      </Grid>
     </div>
   );
 };
