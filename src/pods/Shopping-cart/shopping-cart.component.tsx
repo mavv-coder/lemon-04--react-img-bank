@@ -8,14 +8,16 @@ import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import { Typography } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import Divider from "@material-ui/core/Divider";
+import Button from "@material-ui/core/Button";
 
 interface Props {
   checkedProductList: ProductInfoEntity[];
   updateCartList: (product: ProductInfoEntity) => void;
+  setCheckedProductList: (value: ProductInfoEntity[]) => void;
 }
 
 export const ShoppingCartComponent: React.FC<Props> = (props) => {
-  const { checkedProductList, updateCartList } = props;
+  const { checkedProductList, updateCartList, setCheckedProductList } = props;
   const classes = useStyles();
 
   return (
@@ -39,7 +41,22 @@ export const ShoppingCartComponent: React.FC<Props> = (props) => {
             </li>
           ))}
       </ul>
-      {checkedProductList.length > 0 && <Divider />}
+      <Divider />
+      {checkedProductList.length > 0 && (
+        <footer className={classes.flexContainer}>
+          <Button
+            className={classes.btn}
+            variant="contained"
+            color="secondary"
+            onClick={() => setCheckedProductList([])}
+          >
+            Empty Cart
+          </Button>
+          <Button className={classes.btn} variant="contained" color="primary">
+            Check Out
+          </Button>
+        </footer>
+      )}
     </Paper>
   );
 };

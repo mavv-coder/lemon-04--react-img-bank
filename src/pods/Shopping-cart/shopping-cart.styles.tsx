@@ -40,14 +40,16 @@ export const useStyles = makeStyles(() => ({
     margin: "10px",
   },
   listImg: {
-    // width: "50px",
     height: "50px",
-    // borderRadius: "50%",
     marginRight: "20px",
   },
   deleteIcon: {
     fontSize: "30px",
     marginLeft: "10px",
     color: "#ba000d",
+  },
+  btn: {
+    width: "100%",
+    margin: "10px",
   },
 }));
