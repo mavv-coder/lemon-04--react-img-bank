@@ -14,10 +14,11 @@ export const LoginPage: React.FC = () => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const classes = useStyles();
-  const { setVisibleCart } = useAppContext();
+  const { setVisibleCart, setVisibleCartIcon } = useAppContext();
 
   React.useEffect(() => {
     setVisibleCart(false);
+    setVisibleCartIcon(false);
   }, []);
 
   const handleNavigation = (e: React.FormEvent<HTMLFormElement>) => {

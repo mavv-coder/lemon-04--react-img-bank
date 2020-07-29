@@ -11,6 +11,7 @@ import { PictureList } from "./picture-list.component";
 export const PictureListContainer: React.FC = () => {
   const {
     setVisibleCart,
+    setVisibleCartIcon,
     updateCartList,
     checkedProductList,
   } = useAppContext();
@@ -24,6 +25,7 @@ export const PictureListContainer: React.FC = () => {
 
   React.useEffect(() => {
     setVisibleCart(true);
+    setVisibleCartIcon(true);
     onLoadPictureList();
   }, []);
 

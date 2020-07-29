@@ -12,4 +12,6 @@ export interface Context {
   visibleCart: boolean;
   setVisibleCart: (value: boolean) => void;
   updateCartList: (product: ProductInfoEntity) => void;
+  visibleCartIcon: boolean;
+  setVisibleCartIcon: (value: boolean) => void;
 }

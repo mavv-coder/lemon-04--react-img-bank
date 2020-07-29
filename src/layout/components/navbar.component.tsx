@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const Navbar: React.FC = () => {
   const classes = useStyles();
-  const { setVisibleCart, visibleCart } = useAppContext();
+  const { setVisibleCart, visibleCart, visibleCartIcon } = useAppContext();
 
   return (
     <div className={classes.root}>
@@ -34,15 +34,17 @@ export const Navbar: React.FC = () => {
           <Typography variant="h6" className={classes.title}>
             Movie Posters & Album Covers Collection
           </Typography>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-            onClick={() => setVisibleCart(!visibleCart)}
-          >
-            <ShoppingCartOutlinedIcon className={classes.icon} />
-          </IconButton>
+          {visibleCartIcon && (
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+              onClick={() => setVisibleCart(!visibleCart)}
+            >
+              <ShoppingCartOutlinedIcon className={classes.icon} />
+            </IconButton>
+          )}
         </Toolbar>
       </AppBar>
     </div>
