@@ -1,6 +1,6 @@
-import { ApiItemInfoEntity } from "./mock-data.model";
+import { ApiMovieInfoEntity } from "./movies-mock-data.model";
 
-export const pictureApiList: ApiItemInfoEntity[] = [
+export const movieApiList: ApiMovieInfoEntity[] = [
   {
     id: "01",
     picUrl: "./src/api/assets/01.jpg",
@@ -21,11 +21,11 @@ export const pictureApiList: ApiItemInfoEntity[] = [
     picUrl: "./src/api/assets/04.jpg",
     title: "House on Haunted Hill",
   },
-  // {
-  //   id: "05",
-  //   picUrl: "./src/api/assets/05.jpg",
-  //   title: "They Day the Earth Stood Still",
-  // },
+  {
+    id: "05",
+    picUrl: "./src/api/assets/05.jpg",
+    title: "They Day the Earth Stood Still",
+  },
   {
     id: "06",
     picUrl: "./src/api/assets/06.jpg",
@@ -38,6 +38,6 @@ export const pictureApiList: ApiItemInfoEntity[] = [
   },
 ];
 
-export const getPictureListPromise = (): Promise<ApiItemInfoEntity[]> => {
-  return Promise.resolve(pictureApiList);
+export const getMovieListPromise = (): Promise<ApiMovieInfoEntity[]> => {
+  return Promise.resolve(movieApiList);
 };

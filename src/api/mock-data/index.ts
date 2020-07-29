@@ -1,2 +1,4 @@
-export * from "./mock-data";
-export * from "./mock-data.model";
+export * from "./movies-mock-data";
+export * from "./movies-mock-data.model";
+export * from "./albums-mock-data";
+export * from "./albums-mock-data.model";

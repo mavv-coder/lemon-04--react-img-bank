@@ -1,5 +1,5 @@
 import React from "react";
-import { getPictureListPromise } from "../../api/mock-data";
+import { getMovieListPromise } from "../../api/mock-data";
 import { useAppContext } from "../../core/context";
 import {
   mapPictureListFromApiToVm,
@@ -18,7 +18,7 @@ export const PictureListContainer: React.FC = () => {
   const [pictureList, setPictureList] = React.useState<PictureInfoVm[]>([]);
 
   const onLoadPictureList = () => {
-    getPictureListPromise()
+    getMovieListPromise()
       .then((data) => mapPictureListFromApiToVm(data))
       .then((data) => setPictureList(data));
   };
