@@ -5,7 +5,7 @@ import { ShoppingCartContainer } from "../pods/shopping-cart";
 import { useAppContext } from "../core/context";
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(() => ({
   flexContainer: {
     display: "flex",
     justifyContent: "space-between",
