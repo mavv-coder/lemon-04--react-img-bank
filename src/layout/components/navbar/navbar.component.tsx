@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const NavbarComponent: React.FC = () => {
   const classes = useStyles();
-  const { setVisibleCart, visibleCart, visibleCartIcon } = useAppContext();
+  const { setVisibleCart, visibleCart } = useAppContext();
 
   return (
     <div className={classes.root}>
@@ -64,17 +64,15 @@ export const NavbarComponent: React.FC = () => {
               </Link>
             </Typography>
           </div>
-          {visibleCartIcon && (
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-              onClick={() => setVisibleCart(!visibleCart)}
-            >
-              <ShoppingCartOutlinedIcon className={classes.icon} />
-            </IconButton>
-          )}
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+            onClick={() => setVisibleCart(!visibleCart)}
+          >
+            <ShoppingCartOutlinedIcon className={classes.icon} />
+          </IconButton>
         </Toolbar>
       </AppBar>
     </div>

@@ -7,15 +7,9 @@ export const LoginContainer: React.FC = () => {
   const history = useHistory();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const {
-    setVisibleCart,
-    setVisibleCartIcon,
-    setCheckedProductList,
-  } = useAppContext();
+  const { setCheckedProductList } = useAppContext();
 
   React.useEffect(() => {
-    setVisibleCart(false);
-    setVisibleCartIcon(false);
     setCheckedProductList([]);
   }, []);
 

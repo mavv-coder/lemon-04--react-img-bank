@@ -9,12 +9,7 @@ import { AlbumInfoVm } from "./album-list.vm";
 import { AlbumListComponent } from "./album-list.component";
 
 export const AlbumListContainer: React.FC = () => {
-  const {
-    setVisibleCart,
-    setVisibleCartIcon,
-    updateCartList,
-    checkedProductList,
-  } = useAppContext();
+  const { updateCartList, checkedProductList } = useAppContext();
   const [albumList, setAlbumList] = React.useState<AlbumInfoVm[]>([]);
 
   const onLoadPictureList = () => {
@@ -24,8 +19,6 @@ export const AlbumListContainer: React.FC = () => {
   };
 
   React.useEffect(() => {
-    setVisibleCart(true);
-    setVisibleCartIcon(true);
     onLoadPictureList();
   }, []);
 

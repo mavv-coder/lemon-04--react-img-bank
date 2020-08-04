@@ -9,12 +9,7 @@ import { PictureInfoVm } from "./picture-list.vm";
 import { PictureListComponent } from "./picture-list.component";
 
 export const PictureListContainer: React.FC = () => {
-  const {
-    setVisibleCart,
-    setVisibleCartIcon,
-    updateCartList,
-    checkedProductList,
-  } = useAppContext();
+  const { updateCartList, checkedProductList } = useAppContext();
   const [pictureList, setPictureList] = React.useState<PictureInfoVm[]>([]);
 
   const onLoadPictureList = () => {
@@ -24,8 +19,6 @@ export const PictureListContainer: React.FC = () => {
   };
 
   React.useEffect(() => {
-    setVisibleCart(true);
-    setVisibleCartIcon(true);
     onLoadPictureList();
   }, []);
 

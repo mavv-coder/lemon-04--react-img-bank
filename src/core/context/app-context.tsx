@@ -5,7 +5,6 @@ const AppContext = React.createContext<Context>(null);
 
 export const AppContextProvider = (props) => {
   const [visibleCart, setVisibleCart] = React.useState<boolean>(false);
-  const [visibleCartIcon, setVisibleCartIcon] = React.useState<boolean>(false);
   const [checkedProductList, setCheckedProductList] = React.useState<
     ProductInfoEntity[]
   >([]);
@@ -34,8 +33,6 @@ export const AppContextProvider = (props) => {
         setCheckedProductList,
         visibleCart,
         setVisibleCart,
-        visibleCartIcon,
-        setVisibleCartIcon,
         updateCartList,
       }}
     >
