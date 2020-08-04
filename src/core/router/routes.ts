@@ -1,7 +1,7 @@
 interface SwitchRoutes {
   root: string;
   login: string;
-  pictureList: string;
+  movieList: string;
   albumList: string;
   checkout: string;
 }
@@ -9,7 +9,7 @@ interface SwitchRoutes {
 export const switchRoutes: SwitchRoutes = {
   root: "/",
   login: "/login",
-  pictureList: "/img-list",
+  movieList: "/movie-list",
   albumList: "/album-list",
   checkout: "/checkout",
 };

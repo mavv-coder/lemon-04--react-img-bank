@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const NavbarComponent: React.FC = () => {
+  const { albumList, movieList } = switchRoutes;
   const classes = useStyles();
   const { setVisibleCart, visibleCart } = useAppContext();
 
@@ -54,12 +55,12 @@ export const NavbarComponent: React.FC = () => {
           </Typography>
           <div className={classes.flexContainer}>
             <Typography>
-              <Link to={switchRoutes.pictureList} className={classes.linkText}>
+              <Link to={movieList} className={classes.linkText}>
                 Movies
               </Link>
             </Typography>
             <Typography>
-              <Link to={switchRoutes.albumList} className={classes.linkText}>
+              <Link to={albumList} className={classes.linkText}>
                 Albums
               </Link>
             </Typography>

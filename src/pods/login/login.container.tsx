@@ -2,10 +2,10 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { useAppContext } from "../../core/context";
 import { LoginComponent } from "./login.component";
+import { switchRoutes } from "../../core/router";
 
 export const LoginContainer: React.FC = () => {
   const history = useHistory();
-  console.log(history);
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const { setCheckedProductList } = useAppContext();
@@ -16,11 +16,9 @@ export const LoginContainer: React.FC = () => {
 
   const handleNavigation = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    if (username === "admin" && password === "test") {
-      history.push("/img-list");
-    } else {
-      alert("User / password not valid, psst... admin / test");
-    }
+    username === "admin" && password === "test"
+      ? history.push(switchRoutes.movieList)
+      : alert("User / password not valid, psst... admin / test");
   };
 
   return (

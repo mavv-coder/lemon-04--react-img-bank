@@ -1,5 +1,3 @@
-import { PictureInfoVm } from "../../pods/picture-list";
-
 export interface ProductInfoEntity {
   id: string;
   picUrl: string;

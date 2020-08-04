@@ -1,6 +1,6 @@
 import React from "react";
 import { PictureListContainer } from "../pods/picture-list";
-import { NavbarComponent } from "../layout/components/";
+import { NavbarComponent } from "../layout/components";
 import { ShoppingCartContainer } from "../pods/shopping-cart";
 import { useAppContext } from "../core/context";
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const PictureListScene: React.FC = () => {
+export const MovieListScene: React.FC = () => {
   const { visibleCart } = useAppContext();
   const classes = useStyles();
   return (
