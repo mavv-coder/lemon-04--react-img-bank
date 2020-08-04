@@ -12,14 +12,14 @@ export const AlbumListContainer: React.FC = () => {
   const { updateCartList, checkedProductList } = useAppContext();
   const [albumList, setAlbumList] = React.useState<AlbumInfoVm[]>([]);
 
-  const onLoadPictureList = () => {
+  const onLoadAlbumList = () => {
     getAlbumListPromise()
       .then((data) => mapAlbumListFromApiToVm(data))
       .then((data) => setAlbumList(data));
   };
 
   React.useEffect(() => {
-    onLoadPictureList();
+    onLoadAlbumList();
   }, []);
 
   const checkisInList = (movie: AlbumInfoVm): boolean =>
