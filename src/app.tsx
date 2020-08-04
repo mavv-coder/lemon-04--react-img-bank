@@ -6,9 +6,9 @@ import { ShoppingCartScene } from "./scenes/shopping-cart.scene";
 export const App = () => {
   const { visibleCart } = useAppContext();
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <div>
       <RouterComponent />
-      {visibleCart && <ShoppingCartScene />}
+      {/* {visibleCart && <ShoppingCartScene />} */}
     </div>
   );
 };
