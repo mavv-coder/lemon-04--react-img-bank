@@ -1,8 +1,8 @@
 import React from "react";
-import { ProductInfoEntity } from "../../core/context";
+import { ProductInfoEntity } from "../../../core/context";
 import { useStyles } from "./shopping-cart.styles";
 import { Link } from "react-router-dom";
-import { switchRoutes } from "../../core/router";
+import { switchRoutes } from "../../../core/router";
 
 // Material UI ~ Components
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";

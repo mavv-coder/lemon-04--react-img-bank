@@ -1,6 +1,6 @@
 import React from "react";
-import { LoginContainer } from "../pods/login";
+import { CheckoutContainer } from "../pods/checkout";
 
 export const CheckoutScene: React.FC = () => {
-  return <LoginContainer />;
+  return <CheckoutContainer />;
 };

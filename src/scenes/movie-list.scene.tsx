@@ -1,7 +1,7 @@
 import React from "react";
 import { PictureListContainer } from "../pods/picture-list";
 import { NavbarComponent } from "../layout/components";
-import { ShoppingCartContainer } from "../pods/shopping-cart";
+import { ShoppingCartContainer } from "../layout/components/shopping-cart";
 import { useAppContext } from "../core/context";
 import { makeStyles } from "@material-ui/core/styles";
 
