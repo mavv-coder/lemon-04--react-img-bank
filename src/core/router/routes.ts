@@ -3,6 +3,7 @@ interface SwitchRoutes {
   login: string;
   pictureList: string;
   albumList: string;
+  checkout: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
@@ -10,4 +11,5 @@ export const switchRoutes: SwitchRoutes = {
   login: "/login",
   pictureList: "/img-list",
   albumList: "/album-list",
+  checkout: "/checkout",
 };

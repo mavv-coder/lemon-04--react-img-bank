@@ -1,6 +1,8 @@
 import React from "react";
 import { ProductInfoEntity } from "../../core/context";
 import { useStyles } from "./shopping-cart.styles";
+import { Link } from "react-router-dom";
+import { switchRoutes } from "../../core/router";
 
 // Material UI ~ Components
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
@@ -53,7 +55,9 @@ export const ShoppingCartComponent: React.FC<Props> = (props) => {
             Empty Cart
           </Button>
           <Button className={classes.btn} variant="contained" color="primary">
-            Check Out
+            <Link to={switchRoutes.checkout} className={classes.link}>
+              Check Out
+            </Link>
           </Button>
         </footer>
       )}

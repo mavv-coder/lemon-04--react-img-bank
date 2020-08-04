@@ -5,6 +5,7 @@ import { LoginComponent } from "./login.component";
 
 export const LoginContainer: React.FC = () => {
   const history = useHistory();
+  console.log(history);
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const { setCheckedProductList } = useAppContext();

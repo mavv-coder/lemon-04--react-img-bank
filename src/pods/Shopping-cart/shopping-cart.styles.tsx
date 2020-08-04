@@ -52,4 +52,8 @@ export const useStyles = makeStyles(() => ({
     width: "100%",
     margin: "10px",
   },
+  link: {
+    textDecoration: "none",
+    color: "#fff",
+  },
 }));
