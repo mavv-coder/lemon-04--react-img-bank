@@ -1,9 +1,11 @@
 import React from "react";
-import useStyles from "./login.styles";
+import { useStyles } from "./login.styles";
+
+// Material UI ~ Components
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { Typography } from "@material-ui/core";
-import Container from "@material-ui/core/Container";
+import Paper from "@material-ui/core/Paper";
 
 interface Props {
   username: string;
@@ -24,59 +26,49 @@ export const LoginComponent: React.FC<Props> = (props) => {
   const classes = useStyles();
 
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
-      <Typography
-        variant="h1"
-        style={{ fontSize: "60px", marginTop: "20px", textAlign: "center" }}
-      >
-        Film Image Bank Collection
+    <>
+      <Typography variant="h2" className={classes.title}>
+        Movie Posters & Album Covers Collection
       </Typography>
-      <Container maxWidth="sm" className={classes.root1}>
-        <div className={classes.con}>
-          <form onSubmit={handleNavigation}>
-            <Typography
-              variant="h2"
-              style={{ fontSize: "40px", marginBottom: "20px" }}
-            >
-              User login
-            </Typography>
-            <div>
-              <div className={classes.flexContainer}>
-                <Typography className={classes.label}>Username: </Typography>
-                <TextField
-                  type="text"
-                  variant="outlined"
-                  size="small"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                />
-              </div>
-              <div className={classes.flexContainer}>
-                <Typography className={classes.label}>Password: </Typography>
-                <TextField
-                  id="standard-search"
-                  type="password"
-                  variant="outlined"
-                  size="small"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
+      <Paper className={classes.paper}>
+        <form onSubmit={handleNavigation}>
+          <Typography className={classes.loginTitle}>User login</Typography>
+          <div>
+            <div className={classes.flexContainer}>
+              <Typography className={classes.label}>Username: </Typography>
+              <TextField
+                type="text"
+                variant="outlined"
+                size="small"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
             </div>
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              style={{
-                color: "white",
-                marginTop: "20px",
-              }}
-            >
-              login
-            </Button>
-          </form>
-        </div>
-      </Container>
-    </div>
+            <div className={classes.flexContainer}>
+              <Typography className={classes.label}>Password: </Typography>
+              <TextField
+                id="standard-search"
+                type="password"
+                variant="outlined"
+                size="small"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+          </div>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            style={{
+              color: "white",
+              marginTop: "20px",
+            }}
+          >
+            login
+          </Button>
+        </form>
+      </Paper>
+    </>
   );
 };

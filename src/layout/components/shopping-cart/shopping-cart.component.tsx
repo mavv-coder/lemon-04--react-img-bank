@@ -45,7 +45,7 @@ export const ShoppingCartComponent: React.FC<Props> = (props) => {
       </ul>
       <Divider />
       {checkedProductList.length > 0 && (
-        <footer className={classes.flexContainer}>
+        <footer className={classes.footer}>
           <Button
             className={classes.btn}
             variant="contained"
@@ -54,11 +54,11 @@ export const ShoppingCartComponent: React.FC<Props> = (props) => {
           >
             Empty Cart
           </Button>
-          <Button className={classes.btn} variant="contained" color="primary">
-            <Link to={switchRoutes.checkout} className={classes.link}>
+          <Link to={switchRoutes.checkout} className={classes.link}>
+            <Button className={classes.btn} variant="contained" color="primary">
               Check Out
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </footer>
       )}
     </Paper>

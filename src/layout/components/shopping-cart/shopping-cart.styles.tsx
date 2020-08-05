@@ -48,11 +48,19 @@ export const useStyles = makeStyles(() => ({
     marginLeft: "10px",
     color: "#ba000d",
   },
+  footer: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    margin: "10px",
+    padding: "5px",
+  },
   btn: {
     width: "100%",
-    margin: "10px",
   },
   link: {
+    width: "100%",
+    marginLeft: "10px",
     textDecoration: "none",
     color: "#fff",
   },

@@ -1,8 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useAppContext } from "../../core/context";
-import { LoginComponent } from "./login.component";
 import { switchRoutes } from "../../core/router";
+import { LoginComponent } from "./login.component";
 
 export const LoginContainer: React.FC = () => {
   const history = useHistory();

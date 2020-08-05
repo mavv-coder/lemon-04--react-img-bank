@@ -1,19 +1,21 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
-  root1: {
-    height: "100vh",
-    maxWidth: "max-content",
-    display: "grid",
-    alignItems: "start",
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-  con: {
-    maxWidth: "100%",
+export const useStyles = makeStyles(() => ({
+  paper: {
+    marginTop: "30px",
+    padding: "10px",
+    width: "max-content",
+    margin: "0 auto",
     textAlign: "center",
-    marginTop: "50px",
+    backgroundColor: "#e6ecff",
+  },
+  title: {
+    textAlign: "center",
+    color: "#3f51b5",
+  },
+  loginTitle: {
+    fontSize: "20px",
+    marginBottom: "20px",
   },
   label: {
     fontSize: "18px",
@@ -27,5 +29,3 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px",
   },
 }));
-
-export default useStyles;
