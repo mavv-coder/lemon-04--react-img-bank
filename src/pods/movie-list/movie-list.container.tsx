@@ -6,16 +6,16 @@ import {
   mapPictureInfoFromVmToContext,
 } from "./movie-list.mapper";
 import { MovieInfoVm } from "./movie-list.vm";
-import { PictureListComponent } from "./movie-list.component";
+import { MovieListComponent } from "./movie-list.component";
 
-export const PictureListContainer: React.FC = () => {
+export const MovieListContainer: React.FC = () => {
   const { updateCartList, checkedProductList } = useAppContext();
-  const [pictureList, setPictureList] = React.useState<MovieInfoVm[]>([]);
+  const [movieList, setMovieList] = React.useState<MovieInfoVm[]>([]);
 
   const onLoadPictureList = () => {
     getMovieListPromise()
       .then((data) => mapMovieListFromApiToVm(data))
-      .then((data) => setPictureList(data));
+      .then((data) => setMovieList(data));
   };
 
   React.useEffect(() => {
@@ -32,11 +32,11 @@ export const PictureListContainer: React.FC = () => {
     movie.selected === isInList ? movie : { ...movie, selected: isInList };
 
   React.useEffect(() => {
-    const newPictureList = pictureList.map((movie) => {
+    const newMovieList = movieList.map((movie) => {
       const isInList = checkisInList(movie);
       return updateSelectedProperty(isInList, movie);
     });
-    setPictureList(newPictureList);
+    setMovieList(newMovieList);
   }, [checkedProductList]);
 
   const handleCheckedList = (product: MovieInfoVm): void => {
@@ -45,9 +45,9 @@ export const PictureListContainer: React.FC = () => {
   };
 
   return (
-    <PictureListComponent
+    <MovieListComponent
       handleCheckedList={handleCheckedList}
-      pictureList={pictureList}
+      movieList={movieList}
     />
   );
 };

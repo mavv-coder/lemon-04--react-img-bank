@@ -10,29 +10,28 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
 interface Props {
-  pictureList: MovieInfoVm[];
+  movieList: MovieInfoVm[];
   handleCheckedList: (product: MovieInfoVm) => void;
 }
 
-export const PictureListComponent: React.FC<Props> = (props) => {
-  const { pictureList, handleCheckedList } = props;
+export const MovieListComponent: React.FC<Props> = (props) => {
+  const { movieList, handleCheckedList } = props;
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        {pictureList.map((img) => (
-          <Paper key={img.id} className={classes.paper}>
+        {movieList.map((movie) => (
+          <Paper key={movie.id} className={classes.paper}>
             <div className={classes.pictures}>
-              <img src={img.picUrl} alt="img" className={classes.poster} />
-              <Typography>{img.title}</Typography>
+              <img src={movie.picUrl} alt="img" className={classes.poster} />
+              <Typography>{movie.title}</Typography>
               <FormControlLabel
                 control={
                   <Checkbox
                     name="checkedB"
                     color="primary"
-                    checked={img.selected}
-                    onChange={() => handleCheckedList(img)}
+                    checked={movie.selected}
+                    onChange={() => handleCheckedList(movie)}
                   ></Checkbox>
                 }
                 label="Buy"

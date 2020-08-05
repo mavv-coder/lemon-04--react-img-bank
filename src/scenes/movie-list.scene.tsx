@@ -1,5 +1,5 @@
 import React from "react";
-import { PictureListContainer } from "../pods/movie-list";
+import { MovieListContainer } from "../pods/movie-list";
 import { NavbarContainer } from "../layout/components/navbar";
 import { ShoppingCartContainer } from "../layout/components/shopping-cart";
 import { useAppContext } from "../core/context";
@@ -19,7 +19,7 @@ export const MovieListScene: React.FC = () => {
     <>
       <NavbarContainer />
       <div className={classes.flexContainer}>
-        <PictureListContainer />
+        <MovieListContainer />
         {visibleCart && <ShoppingCartContainer />}
       </div>
     </>

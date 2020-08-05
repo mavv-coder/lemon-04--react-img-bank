@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { switchRoutes } from "../../../core/router";
 import { useStyles } from "./navbar.styles";
 import { LinkComponent } from "../link";
