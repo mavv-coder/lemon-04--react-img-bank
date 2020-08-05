@@ -2,33 +2,21 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles(() => ({
   root: {
-    marginTop: "18px",
-    marginLeft: "20px",
-    width: "100%",
-    maxWidth: 360,
-    backgroundColor: "#e6ecff",
+    maxWidth: "500px",
     height: "max-content",
-  },
-  flexContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: "10px",
-    padding: "5px",
+    margin: "0 auto",
+    marginTop: "18px",
     backgroundColor: "#e6ecff",
   },
   title: {
     fontSize: "18px",
+    padding: "10px",
+    textAlign: "center",
     color: "#3f51b5",
-    marginLeft: "25px",
-  },
-  cartIcon: {
-    color: "#3f51b5",
-    fontSize: "30px",
   },
   list: {
     listStyle: "none",
-    margin: 0,
+    margin: "0px",
     paddingLeft: "10px",
     paddingTop: "10px",
     paddingBottom: "10px",
@@ -48,12 +36,10 @@ export const useStyles = makeStyles(() => ({
     marginLeft: "10px",
     color: "#ba000d",
   },
-  btn: {
-    width: "100%",
-    margin: "10px",
-  },
-  link: {
-    textDecoration: "none",
-    color: "#fff",
+  total: {
+    fontSize: "18px",
+    padding: "10px",
+    textAlign: "center",
+    color: "#000",
   },
 }));
