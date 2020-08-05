@@ -1,6 +1,6 @@
 import React from "react";
 import { AlbumListContainer } from "../pods/album-list";
-import { NavbarComponent } from "../layout/components/";
+import { NavbarContainer } from "../layout/components/navbar";
 import { ShoppingCartContainer } from "../layout/components/shopping-cart";
 import { useAppContext } from "../core/context";
 import { makeStyles } from "@material-ui/core/styles";
@@ -18,7 +18,7 @@ export const AlbumListScene: React.FC = () => {
 
   return (
     <>
-      <NavbarComponent />
+      <NavbarContainer />
       <div className={classes.flexContainer}>
         <AlbumListContainer />
         {visibleCart && <ShoppingCartContainer />}

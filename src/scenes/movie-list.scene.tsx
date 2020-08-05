@@ -1,6 +1,6 @@
 import React from "react";
 import { PictureListContainer } from "../pods/movie-list";
-import { NavbarComponent } from "../layout/components";
+import { NavbarContainer } from "../layout/components/navbar";
 import { ShoppingCartContainer } from "../layout/components/shopping-cart";
 import { useAppContext } from "../core/context";
 import { makeStyles } from "@material-ui/core/styles";
@@ -17,7 +17,7 @@ export const MovieListScene: React.FC = () => {
   const classes = useStyles();
   return (
     <>
-      <NavbarComponent />
+      <NavbarContainer />
       <div className={classes.flexContainer}>
         <PictureListContainer />
         {visibleCart && <ShoppingCartContainer />}
