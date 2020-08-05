@@ -1,5 +1,5 @@
 import React from "react";
-import { PictureListContainer } from "../pods/picture-list";
+import { PictureListContainer } from "../pods/movie-list";
 import { NavbarComponent } from "../layout/components";
 import { ShoppingCartContainer } from "../layout/components/shopping-cart";
 import { useAppContext } from "../core/context";

@@ -9,14 +9,14 @@ const mapAlbumInfoFromApiToVm = (album: ApiAlbumInfoEntity): AlbumInfoVm => ({
 });
 
 export const mapAlbumListFromApiToVm = (
-  pictureList: ApiAlbumInfoEntity[]
-): AlbumInfoVm[] => pictureList.map((e) => mapAlbumInfoFromApiToVm(e));
+  albumList: ApiAlbumInfoEntity[]
+): AlbumInfoVm[] => albumList.map((e) => mapAlbumInfoFromApiToVm(e));
 
 // MAP from album-list page to context
 export const mapPictureInfoFromVmToContext = (
-  picture: AlbumInfoVm
+  album: AlbumInfoVm
 ): ProductInfoEntity => ({
-  id: picture.id,
-  picUrl: picture.picUrl,
-  title: picture.title,
+  id: album.id,
+  picUrl: album.picUrl,
+  title: album.title,
 });

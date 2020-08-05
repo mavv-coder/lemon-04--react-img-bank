@@ -1,4 +1,4 @@
-export interface PictureInfoVm {
+export interface MovieInfoVm {
   id: string;
   picUrl: string;
   title: string;

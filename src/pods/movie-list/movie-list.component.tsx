@@ -1,6 +1,6 @@
 import React from "react";
-import { PictureInfoVm } from "./picture-list.vm";
-import { useStyles } from "./picture-list.styles";
+import { MovieInfoVm } from "./movie-list.vm";
+import { useStyles } from "./movie-list.styles";
 
 // Material UI ~ Components
 import Checkbox from "@material-ui/core/Checkbox";
@@ -10,8 +10,8 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
 interface Props {
-  pictureList: PictureInfoVm[];
-  handleCheckedList: (product: PictureInfoVm) => void;
+  pictureList: MovieInfoVm[];
+  handleCheckedList: (product: MovieInfoVm) => void;
 }
 
 export const PictureListComponent: React.FC<Props> = (props) => {

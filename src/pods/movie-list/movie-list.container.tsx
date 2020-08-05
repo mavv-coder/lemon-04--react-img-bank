@@ -2,19 +2,19 @@ import React from "react";
 import { getMovieListPromise } from "../../api/mock-data";
 import { useAppContext } from "../../core/context";
 import {
-  mapPictureListFromApiToVm,
+  mapMovieListFromApiToVm,
   mapPictureInfoFromVmToContext,
-} from "./picture-list.mapper";
-import { PictureInfoVm } from "./picture-list.vm";
-import { PictureListComponent } from "./picture-list.component";
+} from "./movie-list.mapper";
+import { MovieInfoVm } from "./movie-list.vm";
+import { PictureListComponent } from "./movie-list.component";
 
 export const PictureListContainer: React.FC = () => {
   const { updateCartList, checkedProductList } = useAppContext();
-  const [pictureList, setPictureList] = React.useState<PictureInfoVm[]>([]);
+  const [pictureList, setPictureList] = React.useState<MovieInfoVm[]>([]);
 
   const onLoadPictureList = () => {
     getMovieListPromise()
-      .then((data) => mapPictureListFromApiToVm(data))
+      .then((data) => mapMovieListFromApiToVm(data))
       .then((data) => setPictureList(data));
   };
 
@@ -22,13 +22,13 @@ export const PictureListContainer: React.FC = () => {
     onLoadPictureList();
   }, []);
 
-  const checkisInList = (movie: PictureInfoVm): boolean =>
+  const checkisInList = (movie: MovieInfoVm): boolean =>
     checkedProductList.findIndex((product) => product.id === movie.id) !== -1;
 
   const updateSelectedProperty = (
     isInList: boolean,
-    movie: PictureInfoVm
-  ): PictureInfoVm =>
+    movie: MovieInfoVm
+  ): MovieInfoVm =>
     movie.selected === isInList ? movie : { ...movie, selected: isInList };
 
   React.useEffect(() => {
@@ -39,7 +39,7 @@ export const PictureListContainer: React.FC = () => {
     setPictureList(newPictureList);
   }, [checkedProductList]);
 
-  const handleCheckedList = (product: PictureInfoVm): void => {
+  const handleCheckedList = (product: MovieInfoVm): void => {
     const productEntity = mapPictureInfoFromVmToContext(product);
     updateCartList(productEntity);
   };
