@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { switchRoutes } from "../../../core/router";
 import { useStyles } from "./navbar.styles";
+import { LinkComponent } from "../link";
 
 // Material UI ~ Components
 import AppBar from "@material-ui/core/AppBar";
@@ -29,14 +30,20 @@ export const NavbarComponent: React.FC<Props> = (props) => {
           </Typography>
           <div className={classes.flexContainer}>
             <Typography>
-              <Link to={movieList} className={classes.linkText}>
-                Movies
-              </Link>
+              <LinkComponent
+                destinationPath={movieList}
+                linkclassName={classes.linkText}
+                selectedClassName={classes.selected}
+                linkName="Movies"
+              />
             </Typography>
             <Typography>
-              <Link to={albumList} className={classes.linkText}>
-                Albums
-              </Link>
+              <LinkComponent
+                destinationPath={albumList}
+                linkclassName={classes.linkText}
+                selectedClassName={classes.selected}
+                linkName="Albums"
+              />
             </Typography>
           </div>
           <IconButton
