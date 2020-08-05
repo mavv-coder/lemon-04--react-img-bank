@@ -1,31 +1,46 @@
 import React from "react";
-import { useStyles } from "./checkout.styles";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import { Typography } from "@material-ui/core";
-import Container from "@material-ui/core/Container";
 import { ProductInfoEntity } from "../../core/context";
+import { useStyles } from "./checkout.styles";
+
+// Material UI ~ Components
+import Paper from "@material-ui/core/Paper";
+import Divider from "@material-ui/core/Divider";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import { Typography } from "@material-ui/core";
 
 interface Props {
   checkedProductList: ProductInfoEntity[];
+  updateCartList: (product: ProductInfoEntity) => void;
 }
 
 export const CheckoutComponent: React.FC<Props> = (props) => {
+  const { checkedProductList, updateCartList } = props;
   const classes = useStyles();
-  const { checkedProductList } = props;
 
   return (
-    <Container>
-      <Typography>Checkout</Typography>
+    <Paper className={classes.root}>
+      <Typography className={classes.title}>Checkout</Typography>
+      <Divider />
       <ul className={classes.list}>
         {checkedProductList.length > 0 &&
           checkedProductList.map((product) => (
             <li key={product.id} className={classes.listItem}>
               <img src={product.picUrl} className={classes.listImg} />
               <Typography>{product.title}</Typography>
+              <HighlightOffIcon
+                className={classes.deleteIcon}
+                onClick={() => updateCartList(product)}
+              />
             </li>
           ))}
       </ul>
-    </Container>
+      <Divider />
+      <Typography className={classes.total}>
+        Your cart contains{" "}
+        {checkedProductList.length === 1
+          ? `${checkedProductList.length} item`
+          : `${checkedProductList.length} items`}
+      </Typography>
+    </Paper>
   );
 };
