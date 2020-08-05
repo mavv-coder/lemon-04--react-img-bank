@@ -3,13 +3,13 @@ import { useHistory, Link } from "react-router-dom";
 
 interface Props {
   destinationPath: string;
-  linkclassName: string;
-  selectedClassName: string;
+  linkClassName: string;
+  activeClassName: string;
   linkName: string;
 }
 
 export const LinkComponent: React.FC<Props> = (props) => {
-  const { destinationPath, linkclassName, selectedClassName, linkName } = props;
+  const { destinationPath, linkClassName, activeClassName, linkName } = props;
   const history = useHistory();
 
   return (
@@ -17,8 +17,8 @@ export const LinkComponent: React.FC<Props> = (props) => {
       to={destinationPath}
       className={
         history.location.pathname === destinationPath
-          ? selectedClassName
-          : linkclassName
+          ? activeClassName
+          : linkClassName
       }
     >
       {linkName}

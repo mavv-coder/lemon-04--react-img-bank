@@ -21,41 +21,38 @@ export const NavbarComponent: React.FC<Props> = (props) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar className={classes.flexContainer}>
-          <Typography variant="h6" className={classes.title}>
-            Movie Posters & Album Covers Collection
+    <AppBar position="static">
+      <Toolbar className={classes.flexContainer}>
+        <Typography variant="h1" className={classes.title}>
+          Movie Posters & Album Covers Collection
+        </Typography>
+        <div className={classes.flexContainer}>
+          <Typography>
+            <LinkComponent
+              destinationPath={movieList}
+              linkClassName={classes.linkText}
+              activeClassName={classes.activeLink}
+              linkName="Movies"
+            />
           </Typography>
-          <div className={classes.flexContainer}>
-            <Typography>
-              <LinkComponent
-                destinationPath={movieList}
-                linkclassName={classes.linkText}
-                selectedClassName={classes.selected}
-                linkName="Movies"
-              />
-            </Typography>
-            <Typography>
-              <LinkComponent
-                destinationPath={albumList}
-                linkclassName={classes.linkText}
-                selectedClassName={classes.selected}
-                linkName="Albums"
-              />
-            </Typography>
-          </div>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-            onClick={() => setVisibleCart(!visibleCart)}
-          >
-            <ShoppingCartOutlinedIcon className={classes.icon} />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-    </div>
+          <Typography>
+            <LinkComponent
+              destinationPath={albumList}
+              linkClassName={classes.linkText}
+              activeClassName={classes.activeLink}
+              linkName="Albums"
+            />
+          </Typography>
+        </div>
+        <IconButton
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          onClick={() => setVisibleCart(!visibleCart)}
+        >
+          <ShoppingCartOutlinedIcon className={classes.icon} />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
   );
 };

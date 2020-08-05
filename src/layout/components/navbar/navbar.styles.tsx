@@ -1,19 +1,14 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    display: "flex",
-  },
+export const useStyles = makeStyles(() => ({
   flexContainer: {
     display: "flex",
     justifyContent: "space-between",
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   title: {
     marginRight: "30px",
+    fontSize: "20px",
+    fontWeight: 400,
   },
   linkText: {
     textDecoration: "none",
@@ -27,7 +22,7 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: "#e6ecff",
     },
   },
-  selected: {
+  activeLink: {
     textDecoration: "none",
     fontSize: "18px",
     padding: "12px",

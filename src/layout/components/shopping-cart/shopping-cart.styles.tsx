@@ -5,9 +5,9 @@ export const useStyles = makeStyles(() => ({
     marginTop: "18px",
     marginLeft: "20px",
     width: "100%",
-    maxWidth: 360,
-    backgroundColor: "#e6ecff",
+    maxWidth: "360px",
     height: "max-content",
+    backgroundColor: "#e6ecff",
   },
   flexContainer: {
     display: "flex",
@@ -19,16 +19,16 @@ export const useStyles = makeStyles(() => ({
   },
   title: {
     fontSize: "18px",
-    color: "#3f51b5",
     marginLeft: "25px",
+    color: "#3f51b5",
   },
   cartIcon: {
-    color: "#3f51b5",
     fontSize: "30px",
+    color: "#3f51b5",
   },
   list: {
     listStyle: "none",
-    margin: 0,
+    margin: "0px",
     paddingLeft: "10px",
     paddingTop: "10px",
     paddingBottom: "10px",

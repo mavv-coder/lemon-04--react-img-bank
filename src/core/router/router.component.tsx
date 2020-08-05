@@ -10,6 +10,7 @@ import {
 
 export const RouterComponent: React.FC = () => {
   const { movieList, albumList, login, root, checkout } = switchRoutes;
+
   return (
     <Router>
       <Switch>
