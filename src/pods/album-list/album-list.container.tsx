@@ -15,7 +15,10 @@ export const AlbumListContainer: React.FC = () => {
   const onLoadAlbumList = () => {
     getAlbumListPromise()
       .then((data) => mapAlbumListFromApiToVm(data))
-      .then((data) => setAlbumList(data));
+      .then((data) => {
+        const newAlbumList = generateNewAlbumListCheckingCartSelection(data);
+        setAlbumList(newAlbumList);
+      });
   };
 
   React.useEffect(() => {
@@ -31,12 +34,17 @@ export const AlbumListContainer: React.FC = () => {
   ): AlbumInfoVm =>
     movie.selected === isInList ? movie : { ...movie, selected: isInList };
 
-  React.useEffect(() => {
-    const newPictureList = albumList.map((movie) => {
+  const generateNewAlbumListCheckingCartSelection = (
+    list: AlbumInfoVm[]
+  ): AlbumInfoVm[] =>
+    list.map((movie) => {
       const isInList = checkisInList(movie);
       return updateSelectedProperty(isInList, movie);
     });
-    setAlbumList(newPictureList);
+
+  React.useEffect(() => {
+    const newAlbumList = generateNewAlbumListCheckingCartSelection(albumList);
+    setAlbumList(newAlbumList);
   }, [checkedProductList]);
 
   const handleCheckedList = (product: AlbumInfoVm): void => {
