@@ -15,7 +15,11 @@ export const MovieListContainer: React.FC = () => {
   const onLoadPictureList = () => {
     getMovieListPromise()
       .then((data) => mapMovieListFromApiToVm(data))
-      .then((data) => setMovieList(data));
+      .then((data) => {
+        const newMovieList = generatex(data);
+
+        setMovieList(newMovieList);
+      });
   };
 
   React.useEffect(() => {
@@ -31,11 +35,14 @@ export const MovieListContainer: React.FC = () => {
   ): MovieInfoVm =>
     movie.selected === isInList ? movie : { ...movie, selected: isInList };
 
-  React.useEffect(() => {
-    const newMovieList = movieList.map((movie) => {
+  const generatex = (list: MovieInfoVm[]): MovieInfoVm[] =>
+    list.map((movie) => {
       const isInList = checkisInList(movie);
       return updateSelectedProperty(isInList, movie);
     });
+
+  React.useEffect(() => {
+    const newMovieList = generatex(movieList);
     setMovieList(newMovieList);
   }, [checkedProductList]);
 
