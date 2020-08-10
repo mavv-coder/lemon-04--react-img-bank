@@ -1,5 +1,5 @@
 import React from "react";
-import { useStyles } from "./login.styles";
+import * as classes from "./login.styles";
 
 // Material UI ~ Components
 import Button from "@material-ui/core/Button";
@@ -23,7 +23,6 @@ export const LoginComponent: React.FC<Props> = (props) => {
     setPassword,
     handleNavigation,
   } = props;
-  const classes = useStyles();
 
   return (
     <>
@@ -32,39 +31,29 @@ export const LoginComponent: React.FC<Props> = (props) => {
       </Typography>
       <Paper className={classes.paper}>
         <form onSubmit={handleNavigation}>
-          <Typography className={classes.loginTitle}>User login</Typography>
-          <div>
-            <div className={classes.flexContainer}>
-              <Typography className={classes.label}>Username: </Typography>
-              <TextField
-                type="text"
-                variant="outlined"
-                size="small"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
-            <div className={classes.flexContainer}>
-              <Typography className={classes.label}>Password: </Typography>
-              <TextField
-                id="standard-search"
-                type="password"
-                variant="outlined"
-                size="small"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
+          <Typography className={classes.logTitle}>User login</Typography>
+          <div className={classes.flexContainer}>
+            <TextField
+              type="text"
+              variant="outlined"
+              size="small"
+              value={username}
+              label="User Name"
+              className={classes.input}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <TextField
+              id="standard-search"
+              type="password"
+              variant="outlined"
+              size="small"
+              value={password}
+              label="Password"
+              className={classes.input}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            style={{
-              color: "white",
-              marginTop: "20px",
-            }}
-          >
+          <Button type="submit" variant="contained" color="primary">
             login
           </Button>
         </form>
