@@ -1,6 +1,6 @@
 import React from "react";
 import { switchRoutes } from "../../../core/router";
-import { useStyles } from "./navbar.styles";
+import * as classes from "./navbar.styles";
 import { LinkComponent } from "../link";
 
 // Material UI ~ Components
@@ -18,7 +18,6 @@ interface Props {
 export const NavbarComponent: React.FC<Props> = (props) => {
   const { setVisibleCart, visibleCart } = props;
   const { albumList, movieList } = switchRoutes;
-  const classes = useStyles();
 
   return (
     <AppBar position="static">

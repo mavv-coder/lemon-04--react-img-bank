@@ -1,37 +1,39 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { css } from "emotion";
 
-export const useStyles = makeStyles(() => ({
-  flexContainer: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  title: {
-    marginRight: "30px",
-    fontSize: "20px",
-    fontWeight: 400,
-  },
-  linkText: {
-    textDecoration: "none",
-    fontSize: "18px",
-    padding: "12px",
-    marginRight: "10px",
-    borderRadius: "3px",
-    color: "#fff",
-    "&:hover": {
-      color: "#3f51b5",
-      backgroundColor: "#e6ecff",
-    },
-  },
-  activeLink: {
-    textDecoration: "none",
-    fontSize: "18px",
-    padding: "12px",
-    marginRight: "10px",
-    borderRadius: "3px",
-    color: "#3f51b5",
-    backgroundColor: "#e6ecff",
-  },
-  icon: {
-    fontSize: "30px",
-  },
-}));
+export const flexContainer = css`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const title = css`
+  margin-right: 30px;
+  font-size: 20px;
+  font-weight: 400;
+`;
+
+export const linkText = css`
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px;
+  margin-right: 10px;
+  border-radius: 3px;
+  color: #fff;
+  & :hover {
+    color: #3f51b5;
+    background-color: #e6ecff;
+  }
+`;
+
+export const activeLink = css`
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px;
+  margin-right: 10px;
+  border-radius: 3px;
+  color: #3f51b5;
+  background-color: #e6ecff;
+`;
+
+export const icon = css`
+  font-size: 30px;
+`;

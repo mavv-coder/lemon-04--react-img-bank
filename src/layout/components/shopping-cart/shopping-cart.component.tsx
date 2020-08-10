@@ -1,6 +1,6 @@
 import React from "react";
 import { ProductInfoEntity } from "../../../core/context";
-import { useStyles } from "./shopping-cart.styles";
+import * as classes from "./shopping-cart.styles";
 import { Link } from "react-router-dom";
 import { switchRoutes } from "../../../core/router";
 
@@ -20,7 +20,6 @@ interface Props {
 
 export const ShoppingCartComponent: React.FC<Props> = (props) => {
   const { checkedProductList, updateCartList, setCheckedProductList } = props;
-  const classes = useStyles();
 
   return (
     <Paper className={classes.root}>

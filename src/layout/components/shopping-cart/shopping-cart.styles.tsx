@@ -1,67 +1,75 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { css } from "emotion";
 
-export const useStyles = makeStyles(() => ({
-  root: {
-    marginTop: "18px",
-    marginLeft: "20px",
-    width: "100%",
-    maxWidth: "360px",
-    height: "max-content",
-    backgroundColor: "#e6ecff",
-  },
-  flexContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: "10px",
-    padding: "5px",
-    backgroundColor: "#e6ecff",
-  },
-  title: {
-    fontSize: "18px",
-    marginLeft: "25px",
-    color: "#3f51b5",
-  },
-  cartIcon: {
-    fontSize: "30px",
-    color: "#3f51b5",
-  },
-  list: {
-    listStyle: "none",
-    margin: "0px",
-    paddingLeft: "10px",
-    paddingTop: "10px",
-    paddingBottom: "10px",
-  },
-  listItem: {
-    display: "flex",
-    justifyContent: "start",
-    alignItems: "center",
-    margin: "10px",
-  },
-  listImg: {
-    height: "50px",
-    marginRight: "20px",
-  },
-  deleteIcon: {
-    fontSize: "30px",
-    marginLeft: "10px",
-    color: "#ba000d",
-  },
-  footer: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    margin: "10px",
-    padding: "5px",
-  },
-  btn: {
-    width: "100%",
-  },
-  link: {
-    width: "100%",
-    marginLeft: "10px",
-    textDecoration: "none",
-    color: "#fff",
-  },
-}));
+export const root = css`
+  margin-top: 18px;
+  margin-left: 20px;
+  width: 100%;
+  max-width: 360px;
+  height: max-content;
+  background-color: #e6ecff;
+`;
+
+export const flexContainer = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 5px;
+  background-color: #e6ecff;
+`;
+
+export const title = css`
+  font-size: 18px;
+  margin-left: 25px;
+  color: #3f51b5;
+`;
+
+export const cartIcon = css`
+  font-size: 30px;
+  color: #3f51b5;
+`;
+
+export const list = css`
+  list-style: none;
+  margin: 0px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+`;
+
+export const listItem = css`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 10px;
+`;
+
+export const listImg = css`
+  height: 50px;
+  margin-right: 20px;
+`;
+
+export const deleteIcon = css`
+  font-size: 30px;
+  margin-left: 10px;
+  color: #ba000d;
+`;
+
+export const footer = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  padding: 5px;
+`;
+
+export const btn = css`
+  width: 100%;
+`;
+
+export const link = css`
+  width: 100%;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #fff;
+`;
