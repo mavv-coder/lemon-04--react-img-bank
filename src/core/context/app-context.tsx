@@ -9,18 +9,18 @@ export const AppContextProvider = (props) => {
     ProductInfoEntity[]
   >([]);
 
-  const checkIsInCart = (product: ProductInfoEntity) =>
+  const checkIsInCart = (product: ProductInfoEntity): boolean =>
     checkedProductList.findIndex((el) => el.id === product.id) !== -1;
 
   const toggleProductFromCart = (
     product: ProductInfoEntity,
     isInCart: boolean
-  ) =>
+  ): ProductInfoEntity[] =>
     isInCart
       ? checkedProductList.filter((el) => el.id !== product.id)
       : [...checkedProductList, product];
 
-  const updateCartList = (product: ProductInfoEntity) => {
+  const updateCartList = (product: ProductInfoEntity): void => {
     const isInCart = checkIsInCart(product);
     const newProductList = toggleProductFromCart(product, isInCart);
     setCheckedProductList(newProductList);
@@ -41,7 +41,7 @@ export const AppContextProvider = (props) => {
   );
 };
 
-export const useAppContext = () => {
+export const useAppContext = (): Context => {
   const context = React.useContext(AppContext);
   return context;
 };

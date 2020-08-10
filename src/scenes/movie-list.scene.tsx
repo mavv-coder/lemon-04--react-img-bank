@@ -15,6 +15,7 @@ const useStyles = makeStyles(() => ({
 export const MovieListScene: React.FC = () => {
   const { visibleCart } = useAppContext();
   const classes = useStyles();
+
   return (
     <>
       <NavbarContainer />

@@ -12,17 +12,11 @@ interface Props {
   setUsername: (value: string) => void;
   password: string;
   setPassword: (value: string) => void;
-  handleNavigation: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
 export const LoginComponent: React.FC<Props> = (props) => {
-  const {
-    username,
-    password,
-    setUsername,
-    setPassword,
-    handleNavigation,
-  } = props;
+  const { username, password, setUsername, setPassword, handleSubmit } = props;
 
   return (
     <>
@@ -30,7 +24,7 @@ export const LoginComponent: React.FC<Props> = (props) => {
         Movie Posters & Album Covers Collection
       </Typography>
       <Paper className={classes.card}>
-        <form onSubmit={handleNavigation}>
+        <form onSubmit={handleSubmit}>
           <Typography className={classes.logTitle}>User login</Typography>
           <div className={classes.flexContainer}>
             <TextField

@@ -1,7 +1,7 @@
 import React from "react";
 import { switchRoutes } from "../../../core/router";
-import * as classes from "./navbar.styles";
 import { LinkComponent } from "../link";
+import * as classes from "./navbar.styles";
 
 // Material UI ~ Components
 import AppBar from "@material-ui/core/AppBar";

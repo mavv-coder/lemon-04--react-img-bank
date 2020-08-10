@@ -14,7 +14,7 @@ export const LoginContainer: React.FC = () => {
     setCheckedProductList([]);
   }, []);
 
-  const handleNavigation = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     username === "admin" && password === "test"
       ? history.push(switchRoutes.movieList)
@@ -27,7 +27,7 @@ export const LoginContainer: React.FC = () => {
       setUsername={setUsername}
       password={password}
       setPassword={setPassword}
-      handleNavigation={handleNavigation}
+      handleSubmit={handleSubmit}
     />
   );
 };
