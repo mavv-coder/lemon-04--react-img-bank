@@ -1,6 +1,6 @@
 import React from "react";
 import { ProductInfoEntity } from "../../core/context";
-import { useStyles } from "./checkout.styles";
+import * as classes from "./checkout.styles";
 
 // Material UI ~ Components
 import Paper from "@material-ui/core/Paper";
@@ -15,7 +15,6 @@ interface Props {
 
 export const CheckoutComponent: React.FC<Props> = (props) => {
   const { checkedProductList, updateCartList } = props;
-  const classes = useStyles();
 
   return (
     <Paper className={classes.root}>

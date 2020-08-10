@@ -1,23 +1,24 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { css } from "emotion";
 
-export const useStyles = makeStyles(() => ({
-  root: {
-    flexGrow: 1,
-    textAlign: "center",
-    marginLeft: "3px",
-    marginTop: "20px",
-  },
-  paper: {
-    margin: "10px",
-    padding: "5px",
-    backgroundColor: "#e6ecff",
-    minWidth: "200px",
-  },
-  pictures: {
-    margin: "10px",
-  },
-  poster: {
-    width: "100px",
-    marginBottom: "10px",
-  },
-}));
+export const root = css`
+  flex-grow: 1;
+  margin-left: 3px;
+  margin-top: 20px;
+  text-align: center;
+`;
+
+export const card = css`
+  min-width: 200px;
+  margin: 10px;
+  padding: 5px;
+  background-color: #e6ecff;
+`;
+
+export const img = css`
+  margin: 10px;
+`;
+
+export const poster = css`
+  width: 100px;
+  margin-bottom: 10px;
+`;

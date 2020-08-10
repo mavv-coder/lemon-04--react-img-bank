@@ -1,6 +1,6 @@
 import React from "react";
 import { AlbumInfoVm } from "./album-list.vm";
-import { useStyles } from "./album-list.styles";
+import * as classes from "./album-list.styles";
 
 // Material UI ~ Components
 import Checkbox from "@material-ui/core/Checkbox";
@@ -16,14 +16,13 @@ interface Props {
 
 export const AlbumListComponent: React.FC<Props> = (props) => {
   const { albumList, handleCheckedList } = props;
-  const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
         {albumList.map((img) => (
-          <Paper key={img.id} className={classes.paper}>
-            <div className={classes.pictures}>
+          <Paper key={img.id} className={classes.card}>
+            <div className={classes.img}>
               <img src={img.picUrl} alt="img" className={classes.poster} />
               <Typography className={classes.bandTitle}>{img.band}</Typography>
               <Typography>{img.title}</Typography>

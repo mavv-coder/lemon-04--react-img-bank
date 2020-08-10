@@ -29,7 +29,7 @@ export const LoginComponent: React.FC<Props> = (props) => {
       <Typography variant="h2" className={classes.title}>
         Movie Posters & Album Covers Collection
       </Typography>
-      <Paper className={classes.paper}>
+      <Paper className={classes.card}>
         <form onSubmit={handleNavigation}>
           <Typography className={classes.logTitle}>User login</Typography>
           <div className={classes.flexContainer}>

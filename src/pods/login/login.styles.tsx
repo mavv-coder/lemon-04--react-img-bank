@@ -21,7 +21,7 @@ export const logTitle = css`
   font-size: 24px;
 `;
 
-export const paper = css`
+export const card = css`
   margin-top: 30px;
   padding: 20px;
   width: max-content;

@@ -1,6 +1,6 @@
 import React from "react";
 import { MovieInfoVm } from "./movie-list.vm";
-import { useStyles } from "./movie-list.styles";
+import * as classes from "./movie-list.styles";
 
 // Material UI ~ Components
 import Checkbox from "@material-ui/core/Checkbox";
@@ -16,13 +16,13 @@ interface Props {
 
 export const MovieListComponent: React.FC<Props> = (props) => {
   const { movieList, handleCheckedList } = props;
-  const classes = useStyles();
+
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
         {movieList.map((movie) => (
-          <Paper key={movie.id} className={classes.paper}>
-            <div className={classes.pictures}>
+          <Paper key={movie.id} className={classes.card}>
+            <div className={classes.img}>
               <img src={movie.picUrl} alt="img" className={classes.poster} />
               <Typography>{movie.title}</Typography>
               <FormControlLabel
